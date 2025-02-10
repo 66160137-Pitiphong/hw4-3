@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ตารางนัดหมาย</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>📅 ตารางนัดหมาย</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>ตารางนัดหมาย</h1>
+        <h1>📅 ตารางนัดหมาย</h1>
         <div class="form">
-            <input type="text" id="title" placeholder="หัวข้อ">
+            <input type="text" id="title" placeholder="🔹 หัวข้อ">
             <input type="date" id="date">
             <input type="time" id="startTime">
             <input type="time" id="endTime">
-            <button onclick="addAppointment()">เพิ่มนัดหมาย</button>
+            <button onclick="addAppointment()">➕ เพิ่มนัดหมาย</button>
         </div>
         <table>
             <thead>
@@ -24,7 +24,7 @@
                     <th>เวลาเริ่ม</th>
                     <th>เวลาสิ้นสุด</th>
                     <th>สถานะ</th>
-                    <th>การจัดการ</th>
+                    <th>จัดการ</th>
                 </tr>
             </thead>
             <tbody id="appointmentList">

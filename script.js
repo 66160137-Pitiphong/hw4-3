@@ -7,7 +7,7 @@ function addAppointment() {
     const endTime = document.getElementById("endTime").value;
 
     if (!title || !date || !startTime || !endTime) {
-        alert("กรุณากรอกข้อมูลให้ครบ");
+        alert("❌ กรุณากรอกข้อมูลให้ครบ");
         return;
     }
 
@@ -17,13 +17,23 @@ function addAppointment() {
         date,
         startTime,
         endTime,
-        status: "confirmed"
+        status: "✅ ยืนยัน"
     };
 
     appointments.push(newAppointment);
     renderAppointments();
+    clearForm();
 }
 
+/* เคลียร์ช่องกรอกข้อมูล */
+function clearForm() {
+    document.getElementById("title").value = "";
+    document.getElementById("date").value = "";
+    document.getElementById("startTime").value = "";
+    document.getElementById("endTime").value = "";
+}
+
+/* แสดงรายการ */
 function renderAppointments() {
     const appointmentList = document.getElementById("appointmentList");
     appointmentList.innerHTML = "";
@@ -36,10 +46,10 @@ function renderAppointments() {
             <td>${appointment.date}</td>
             <td>${appointment.startTime}</td>
             <td>${appointment.endTime}</td>
-            <td class="${appointment.status === 'cancelled' ? 'cancelled' : ''}">${appointment.status}</td>
+            <td class="${appointment.status.includes('❌') ? 'cancelled' : ''}">${appointment.status}</td>
             <td>
-                <button class="cancel" onclick="cancelAppointment(${appointment.id})">ยกเลิก</button>
-                <button class="delete" onclick="deleteAppointment(${appointment.id})">ลบ</button>
+                <button class="cancel" onclick="cancelAppointment(${appointment.id})">❌ ยกเลิก</button>
+                <button class="delete" onclick="deleteAppointment(${appointment.id})">🗑 ลบ</button>
             </td>
         `;
 
@@ -47,13 +57,15 @@ function renderAppointments() {
     });
 }
 
+/* เปลี่ยนสถานะเป็น "ยกเลิก" */
 function cancelAppointment(id) {
     appointments = appointments.map(app => 
-        app.id === id ? { ...app, status: "cancelled" } : app
+        app.id === id ? { ...app, status: "❌ ยกเลิก" } : app
     );
     renderAppointments();
 }
 
+/* ลบออกจากรายการ */
 function deleteAppointment(id) {
     appointments = appointments.filter(app => app.id !== id);
     renderAppointments();
