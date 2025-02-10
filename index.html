@@ -3,35 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>📅 ตารางนัดหมาย</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>ตารางนัดหมาย</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>📅 ตารางนัดหมาย</h1>
-        <div class="form">
-            <input type="text" id="title" placeholder="🔹 หัวข้อ">
-            <input type="date" id="date">
-            <input type="time" id="startTime">
-            <input type="time" id="endTime">
-            <button onclick="addAppointment()">➕ เพิ่มนัดหมาย</button>
-        </div>
-        <table>
-            <thead>
-                <tr>
-                    <th>หัวข้อ</th>
-                    <th>วันที่</th>
-                    <th>เวลาเริ่ม</th>
-                    <th>เวลาสิ้นสุด</th>
-                    <th>สถานะ</th>
-                    <th>จัดการ</th>
-                </tr>
-            </thead>
-            <tbody id="appointmentList">
-                <!-- รายการนัดหมายจะเพิ่มตรงนี้ -->
-            </tbody>
-        </table>
-    </div>
+    <h2>📅 ตารางนัดหมาย</h2>
+    <form id="appointmentForm">
+        <input type="text" id="title" placeholder="หัวข้อ" required>
+        <input type="date" id="date" required>
+        <input type="time" id="startTime" required>
+        <input type="time" id="endTime" required>
+        <button type="submit">➕ เพิ่มนัดหมาย</button>
+    </form>
+
+    <h3>🗂️ รายการนัดหมาย</h3>
+    <table id="appointmentTable">
+        <thead>
+            <tr>
+                <th>หัวข้อ</th>
+                <th>วันที่</th>
+                <th>เวลาเริ่ม</th>
+                <th>เวลาสิ้นสุด</th>
+                <th>สถานะ</th>
+                <th>การจัดการ</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
     <script src="script.js"></script>
 </body>
 </html>
