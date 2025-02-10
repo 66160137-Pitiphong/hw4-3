@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Scheduler</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Appointment Scheduler</h1>
+    <form id="appointment-form">
+        <input type="text" id="title" placeholder="Appointment Title" required>
+        <input type="date" id="date" required>
+        <input type="time" id="start-time" required>
+        <input type="time" id="end-time" required>
+        <button type="submit">Add Appointment</button>
+    </form>
+    <div id="appointments"></div>
+    <script src="script.js"></script>
+</body>
+</html>
